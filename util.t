@@ -17,7 +17,7 @@ end
 
 function U.includecstring_path(str)
 	local cpath = os.getenv("C_INCLUDE_PATH") or "."
-	return terralib.includecstring(str, "-I", cpath)
+	return terralib.includecstring(str, {"-I", cpath})
 end
 
 function U.appendTable(t1, t2)
@@ -55,8 +55,3 @@ end
 
 
 return U
-
-
-
-
-
