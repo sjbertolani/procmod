@@ -1,13 +1,13 @@
-local S = terralib.require("qs.lib.std")
-local qs = terralib.require("qs")
-local globals = terralib.require("globals")
-local gl = terralib.require("gl.gl")
-local glutils = terralib.require("gl.glutils")
-local Mesh = terralib.require("geometry.mesh")
-local Vec = terralib.require("linalg.vec")
-local BinaryGrid = terralib.require("geometry.binaryGrid3d")
-local BBox = terralib.require("geometry.bbox")
-local shadowmap = terralib.require("shadowmap")
+local S = require("qs.lib.std")
+local qs = require("qs")
+local globals = require("globals")
+local gl = require("gl.gl")
+local glutils = require("gl.glutils")
+local Mesh = require("geometry.mesh")
+local Vec = require("linalg.vec")
+local BinaryGrid = require("geometry.binaryGrid3d")
+local BBox = require("geometry.bbox")
+local shadowmap = require("shadowmap")
 
 
 local C = terralib.includecstring [[
@@ -646,7 +646,7 @@ local terra keyboard(key: uint8, x: int, y: int)
 		end
 	elseif key == char('z') then
 		regenCurrMeshAtHighRes()
-	elseif key == char(' ') then 
+	elseif key == char(' ') then
 		S.printf("Starting\n")
 		for i=1,10 do
 			S.printf("iteration %i\n", i)
@@ -693,8 +693,3 @@ end
 
 
 main()
-
-
-
-
-
